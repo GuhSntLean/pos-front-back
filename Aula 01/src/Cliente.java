@@ -34,6 +34,10 @@ public class Cliente {
     }
 
     public void setContratacao(List<Contratacao> contratacao) {
-        this.contratacao = contratacao;
+        this.contratacao = contratacao ;
+    }
+
+    public void addContratacao(Contratacao contratacao) {
+        this.contratacao.add(contratacao);
     }
 }

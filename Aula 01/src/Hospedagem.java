@@ -2,7 +2,8 @@ public class Hospedagem extends ItemPacote{
     private String nomeHotel;
     private String endereco;
 
-    public Hospedagem(String nomeHotel, String endereco) {
+    public Hospedagem(String price, String nomeHotel, String endereco) {
+        super(price);
         this.nomeHotel = nomeHotel;
         this.endereco = endereco;
     }

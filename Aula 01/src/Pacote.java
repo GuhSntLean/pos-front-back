@@ -2,13 +2,13 @@ import java.util.List;
 
 public class Pacote {
     private String descricao;
-    private List<ItemPacote> itemPacote;
     private Localidade localidade;
+    private List<ItemPacote> itemPacote;
 
     public Pacote(String descricao, List<ItemPacote> itemPacote, Localidade localidade) {
         this.descricao = descricao;
-        this.itemPacote = itemPacote;
         this.localidade = localidade;
+        this.itemPacote = new ArrayList<>();
     }
 
     public String getDescricao() {
@@ -34,4 +34,9 @@ public class Pacote {
     public void setItemPacote(List<ItemPacote> itemPacote) {
         this.itemPacote = itemPacote;
     }
+
+    public void addItemPacote(ItemPacote itemPacote) {
+        this.itemPacote.add(itemPacote);
+    }
+
 }
