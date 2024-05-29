@@ -9,7 +9,7 @@ public class ItemPacote {
         return preco;
     }
 
-    public void setPreco(String price) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 }
