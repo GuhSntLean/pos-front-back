@@ -1,15 +1,15 @@
 public class ItemPacote {
-    private String price;
+    private String preco;
 
-    public ItemPacote(String price) {
-        this.price = price;
+    public ItemPacote(String preco) {
+        this.preco = preco;
     }
 
-    public String getPrice() {
-        return price;
+    public String getPreco() {
+        return preco;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setPreco(String price) {
+        this.preco = preco;
     }
 }

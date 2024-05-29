@@ -1,14 +1,15 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pacote {
     private String descricao;
     private Localidade localidade;
-    private List<ItemPacote> itemPacote;
+    private List<ItemPacote> itemPacote = new ArrayList<>();
 
     public Pacote(String descricao, List<ItemPacote> itemPacote, Localidade localidade) {
         this.descricao = descricao;
         this.localidade = localidade;
-        this.itemPacote = new ArrayList<>();
+        this.itemPacote.addAll(itemPacote);
     }
 
     public String getDescricao() {

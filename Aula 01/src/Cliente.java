@@ -5,12 +5,12 @@ import java.util.List;
 public class Cliente {
     private String nome;
     private Date dataNascimento;
-    private List<Contratacao> contratacao;
+    private List<Contratacao> contratacao = new ArrayList<>();
 
     public Cliente(String nome, Date dataNascimento, List<Contratacao> contratacao) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
-        this.contratacao = new ArrayList<>();
+        this.contratacao.addAll(contratacao);
     }
 
     public String getNome() {

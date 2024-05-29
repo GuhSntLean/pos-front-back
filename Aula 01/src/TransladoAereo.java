@@ -1,19 +1,19 @@
 public class TransladoAereo extends ItemPacote{
-   private String companhiaAerea;
+   private String companiaAerea;
    private String numeroVoo;
 
-   public TransladoAereo(String price, String companhiaAerea, String numeroVoo) {
-      super(price);
-      this.companhiaAerea = companhiaAerea;
+   public TransladoAereo(String preco, String companiaAerea, String numeroVoo) {
+      super(preco);
+      this.companiaAerea = companiaAerea;
       this.numeroVoo = numeroVoo;
    }
 
    public String getCompanhiaAerea() {
-      return companhiaAerea;
+      return companiaAerea;
    }
 
-   public void setCompanhiaAerea(String companhiaAerea) {
-      this.companhiaAerea = companhiaAerea;
+   public void setCompanhiaAerea(String companiaAerea) {
+      this.companiaAerea = companiaAerea;
    }
 
    public String getNumeroVoo() {
