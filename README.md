@@ -2,7 +2,7 @@
 
 ## Grupo
     Gustavo Santos Leandro
-    Rafael condez
+    Rafael Condez
     João Miguel
     Tomás Luchesi
 
