@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Tarefa</title>
+        <link rel="stylesheet" href="main.css">
+        <script type="module" src="main.js"></script>
+    </head>
+    <body>
+        <button id="botao">Carregar</button>
+        <div id="total"></div>
+        <div id="placeholder"></div>
+        <script type="module">
+            import {onLoadPacotes} from './main.js'
+
+            document.querySelector('#botao').addEventListener('click', onLoadPacotes)
+        </script>
+    </body>
+</html>
