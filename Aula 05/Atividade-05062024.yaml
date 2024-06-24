@@ -1,0 +1,208 @@
+openapi: 3.0.1
+info:
+  title: Pacotes API
+  description: API para obtenção de pacotes de viagem
+  version: 1.0.0
+paths:
+  /pacotes:
+    get:
+      summary: obter pacotes de viagem
+      responses:
+        '200':
+          description: sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pacotes:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Pacote'
+    post:
+      summary: criar um novo pacote de viagem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NovoPacote'
+      responses:
+        '201':
+          description: Pacote criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pacote'
+        '400':
+          description: Requisição inválida
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /pacotes/{id}:
+    get:
+      summary: obter um pacote de viagem por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do pacote de viagem
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pacote'
+        '404':
+          description: Pacote não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    delete:
+      summary: Excluir um pacote de viagem por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do pacote de viagem
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Pacote excluído com sucesso
+    put:
+      summary: atualizar um pacote de viagem por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do pacote de viagem
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pacote'
+      responses:
+        '204':
+          description: Pacote atualizado com sucesso
+        '400':
+          description: Requisição inválida
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    Pacote:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        localidade:
+          type: object
+          properties:
+            descricao:
+              type: string
+        descricao:
+          type: string
+        itens:
+          type: array
+          items:
+            type: object
+            properties:
+              hospedagem:
+                type: object
+                properties:
+                  preco:
+                    type: number
+                    format: float
+                  nomeHotel:
+                    type: string
+                  endereco:
+                    type: string
+              locacaoVeiculo:
+                type: object
+                properties:
+                  preco:
+                    type: number
+                    format: float
+                  marca:
+                    type: string
+                  modelo:
+                    type: string
+              transladoAereo:
+                type: object
+                properties:
+                  preco:
+                    type: number
+                    format: float
+                  companiaAerea:
+                    type: string
+                  numeroVoo:
+                    type: string
+    NovoPacote:
+      type: object
+      properties:
+        localidade:
+          type: object
+          properties:
+            descricao:
+              type: string
+        descricao:
+          type: string
+        itens:
+          type: array
+          items:
+            type: object
+            properties:
+              hospedagem:
+                type: object
+                properties:
+                  preco:
+                    type: number
+                    format: float
+                  nomeHotel:
+                    type: string
+                  endereco:
+                    type: string
+              locacaoVeiculo:
+                type: object
+                properties:
+                  preco:
+                    type: number
+                    format: float
+                  marca:
+                    type: string
+                  modelo:
+                    type: string
+              transladoAereo:
+                type: object
+                properties:
+                  preco:
+                    type: number
+                    format: float
+                  companiaAerea:
+                    type: string
+                  numeroVoo:
+                    type: string
