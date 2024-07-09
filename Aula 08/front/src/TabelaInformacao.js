@@ -5,16 +5,14 @@ function TabelaInformacao(props) {
       <td>
         <ul>
           <li key={index} className="item-row">
-            <div>Descriação : {dados.descricao ? dados.descricao : "Sem descrição"}</div>
-            <div>
-              Descriação da localidade: {dados.localidade.descricao
-                ? dados.localidade.descricao
-                : "Sem descrição da localidade"}
-            </div>
+            <>
+              <div>
+                {dados.descricao ? dados.descricao : "Sem descrição"}
+              </div>
+            </>
           </li>
         </ul>
       </td>
-
       <td>
         <ul>
           {dados.items.map((item, index) => {
