@@ -29,3 +29,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+/Aula\ 08/front/node_modules

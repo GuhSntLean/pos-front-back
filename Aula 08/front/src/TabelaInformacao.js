@@ -13,9 +13,9 @@ function TabelaInformacao(props) {
                       <div>{item.nomeHotel}</div>
                       <div>{item.endereco}</div>
                     </>
-                  ) : item.companiaAerea ? (
+                  ) : item.companhiaAerea ? (
                     <>
-                      <div>{item.companiaAerea}</div>
+                      <div>{item.companhiaAerea}</div>
                       <div>{item.numeroVoo}</div>
                     </>
                   ) : item.marca ? (
