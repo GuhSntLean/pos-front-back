@@ -25,7 +25,7 @@ async function loadLocalidates(criteria) {
 }
 
 async function loadLocalidade(id) {
-  const endpoint = `${ULR}localidade/${id}`;
+  const endpoint = `${ULR}localidades/${id}`;
   const response = await fetch(endpoint);
   const data = await response.json();
   console.log(`Carregado localidades (payload : ${data})`);

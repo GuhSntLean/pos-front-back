@@ -24,6 +24,7 @@ public class LocalidadeController {
     @RequestMapping(method = RequestMethod.GET, value = "/localidades")
     public ResponseEntity<List<Localidade>> getAllLocalidade(@RequestParam(name = "q", required = false) String criteria, Pageable pageable) {
         Page<Localidade> localidades = this.localidadeService.getLocalidades(criteria, pageable);
+        System.out.println(localidades);
         return ResponseEntity.ok()
                 .header("Access-Control-Allow-Headers", "*")
                 .header("X-Total-Count", String.valueOf(localidades.getTotalElements()))
@@ -33,6 +34,7 @@ public class LocalidadeController {
     @RequestMapping(method = RequestMethod.GET, value = "/localidades/{id}")
     public ResponseEntity<Localidade> getLocalidade(@PathVariable("id")UUID id) {
         Optional<Localidade> localidade = this.localidadeService.getLocalidade(id);
+
         return localidade.map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }

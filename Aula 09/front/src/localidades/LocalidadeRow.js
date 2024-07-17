@@ -32,21 +32,19 @@ const ValorCell = styled(DataCell)`
   padding-right: 12px;
 `;
 
-function PacoteRow(props) {
-  const { pacote } = props;
+function LocalidadeRow(props) {
+  const { localidade } = props;
   const navigate = useNavigate();
  
-  const selectPacote = () => {
-    navigate(`/pacotes/${pacote.id}`);
+  const selectLocalidade = () => {
+    navigate(`/localidades/${localidade.id}`);
   }
 
   return (
-    <DataRow onClick={selectPacote}>
-      <DescricaoCell>{pacote.descricao}</DescricaoCell>
-      <LocalidadeCell>{pacote.localidade.descricao}</LocalidadeCell>
-      <ValorCell>{pacote.valor}</ValorCell>
+    <DataRow onClick={selectLocalidade}>
+      <DescricaoCell>{localidade.descricao}</DescricaoCell>
     </DataRow>
   );
 }
 
-export default PacoteRow;
+export default LocalidadeRow;

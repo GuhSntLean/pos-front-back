@@ -1,6 +1,6 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Criteria from "../data/Criteria.js";
-import PacotesGrid from "./LocalidadesGrid.js";
+import LocalidadesGrid from "./LocalidadesGrid.js";
 
 import styled from "styled-components";
 
@@ -18,9 +18,9 @@ function Localidades(props) {
   const navigate = useNavigate();
   const setCriteria = (criteria) => {
     if (criteria) {
-      navigate(`/pacotes?q=${criteria}`);
+      navigate(`/localidades?q=${criteria}`);
     } else {
-      navigate("/pacotes");
+      navigate("/localidades");
     }
   };
   const dados = useLoaderData();
@@ -38,10 +38,12 @@ function Localidades(props) {
 
 function Data(props) {
   const { dados } = props;
+
+  console.log(dados[0].descricao);
   if (dados.length === 0) {
-    return <Message>Nenhum pacote carregado</Message>;
+    return <Message>Nenhuma localidade carregada</Message>;
   } else {
-    return <PacotesGrid dados={dados} />;
+    return <LocalidadesGrid dados={dados} />;
   }
 }
 

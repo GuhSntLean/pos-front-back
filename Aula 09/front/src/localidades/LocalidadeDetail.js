@@ -51,95 +51,19 @@ const Main = styled.main`
 
 
 function LocalidadeDetails(props) {
-  const pacote = useLoaderData();
-
-  const itemDetails = pacote.items.map(x => <ItemPacoteDetails item={x}/>)
-
+  const localidade = useLoaderData();
+  
   return (
     <Main>
         <section>
-            <h1>Pacote {pacote.id}</h1>
+            <h1>Localidade {localidade.id}</h1>
             <ItemDetail>
                 <label>Descrição</label>
-                <span>{pacote.descricao}</span>
+                <span>{localidade.descricao}</span>
             </ItemDetail>        
-            <ItemDetail>
-                <label>Localidade</label>
-                <span>{pacote.localidade.descricao}</span>
-            </ItemDetail>        
-            <ItemDetail>
-                <label>Valor Total</label>
-                <span>R$ {pacote.valor}</span>
-            </ItemDetail>
         </section>
-        <DetailSection>
-            <h2>Items inclusos</h2>
-            <Items>
-                {itemDetails}
-            </Items>
-        </DetailSection>
     </Main>
   )
-}
-
-function ItemPacoteDetails(props) {
-    const { item } =  props;
-    if (item.tipo === 'hotel') {
-        return (
-            <ItemDetails>
-                <h3>Hotel</h3>
-                    <ItemDetail>
-                        <label>Nome do Hotel</label>
-                        <span>{item.nomeHotel}</span>
-                    </ItemDetail>
-                    <ItemDetail>
-                        <label>Endereço</label>
-                        <span>{item.endereco}</span>
-                    </ItemDetail>
-                    <ItemDetail>
-                        <label>Diária</label>
-                        <span>R$ {item.preco}</span>
-                    </ItemDetail>
-            </ItemDetails>
-        )
-    } else if (item.tipo === 'voo') {
-        return (
-            <ItemDetails>
-                <h3>Voo</h3>
-                    <ItemDetail>
-                        <label>Companhia Aerea</label>
-                        <span>{item.companhiaAerea}</span>
-                    </ItemDetail>
-                    <ItemDetail>
-                        <label>Voo</label>
-                        <span>{item.numeroVoo}</span>
-                    </ItemDetail>
-                    <ItemDetail>
-                        <label>Preço</label>
-                        <span>R$ {item.preco}</span>
-                    </ItemDetail>
-            </ItemDetails>
-        )
-    } else if (item.tipo === 'veiculo') {
-        return (
-            <ItemDetails>
-                <h3>Veiculo</h3>
-                <ItemDetail>
-                        <label>Marca</label>
-                        <span>{item.marca}</span>
-                    </ItemDetail>
-                    <ItemDetail>
-                        <label>Modelo</label>
-                        <span>{item.modelo}</span>
-                    </ItemDetail>
-                    <ItemDetail>
-                        <label>Diária</label>
-                        <span>R$ {item.preco}</span>
-                    </ItemDetail>
-            </ItemDetails>
-
-        )
-    }
 }
 
 export default LocalidadeDetails;

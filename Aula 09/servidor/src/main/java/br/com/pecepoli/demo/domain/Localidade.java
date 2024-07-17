@@ -20,6 +20,8 @@ public class Localidade {
     @Column(name = "DESCRICAO")
     private String descricao;
 
+    public UUID getId() { return id; }
+
     public String getDescricao() { return descricao; }
 
     public void setDescricao(String descricao) {this.descricao = descricao; }

@@ -2,7 +2,7 @@ import PacoteRow from "./LocalidadeRow.js";
 
 import styled from "styled-components";
 
-const PacotesTable = styled.table`
+const LocalidadeTable = styled.table`
   border-collapse: collapse;
 `;
 
@@ -24,22 +24,20 @@ const ValorCell = styled(HeaderCell)`
 
 function LocalidadesGrid(props) {
   const { dados } = props;
-  const rows = dados.map((x) => <PacoteRow pacote={x} />);
+  const rows = dados.map((x) => <PacoteRow localidade={x} />);
 
   return (
-    <PacotesTable>
-      <PacotesTableHeader />
+    <LocalidadeTable>
+      <LocalidadeTableHeader />
       {rows}
-    </PacotesTable>
+    </LocalidadeTable>
   );
 }
 
-function PacotesTableHeader() {
+function LocalidadeTableHeader() {
   return (
     <HeaderRow>
-      <DescricaoCell>Descrição</DescricaoCell>
       <LocalidadeCell>Localidade</LocalidadeCell>
-      <ValorCell>Preço</ValorCell>
     </HeaderRow>
   );
 }
