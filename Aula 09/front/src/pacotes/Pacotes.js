@@ -1,5 +1,5 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
-import Criteria from "../criteria/Criteria.js";
+import Criteria from "../data/Criteria.js";
 import PacotesGrid from './PacotesGrid.js';
 
 import styled from 'styled-components';
