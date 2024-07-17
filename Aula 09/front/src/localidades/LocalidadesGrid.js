@@ -13,14 +13,9 @@ const HeaderRow = styled.tr`
 
 const HeaderCell = styled.th``;
 
-const DescricaoCell = styled(HeaderCell)``;
+const EstadoCell = styled(HeaderCell)``;
 
 const LocalidadeCell = styled(HeaderCell)``;
-
-const ValorCell = styled(HeaderCell)`
-  text-align: right;
-  padding-right: 12px;
-`;
 
 function LocalidadesGrid(props) {
   const { dados } = props;
@@ -38,6 +33,7 @@ function LocalidadeTableHeader() {
   return (
     <HeaderRow>
       <LocalidadeCell>Localidade</LocalidadeCell>
+      <EstadoCell>Estado</EstadoCell>
     </HeaderRow>
   );
 }

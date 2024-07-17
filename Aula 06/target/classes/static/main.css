@@ -1,0 +1,36 @@
+.tabela {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabela th, .tabela td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.tabela td:first-child {
+    width: 800px;
+}
+
+.tabela th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.tabela ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tabela .item-row {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tabela .item-row div {
+    margin-bottom: 5px;
+}
+
+.tabela .item-row:last-child {
+    border-bottom: none;
+}

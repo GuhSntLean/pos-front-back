@@ -23,13 +23,8 @@ const DescricaoCell = styled(DataCell)`
   padding-left: 12px;
 `;
 
-const LocalidadeCell = styled(DataCell)`
+const EstadoCell = styled(DataCell)`
   text-align: center;
-`;
-
-const ValorCell = styled(DataCell)`
-  text-align: right;
-  padding-right: 12px;
 `;
 
 function LocalidadeRow(props) {
@@ -43,6 +38,7 @@ function LocalidadeRow(props) {
   return (
     <DataRow onClick={selectLocalidade}>
       <DescricaoCell>{localidade.descricao}</DescricaoCell>
+      <EstadoCell>{localidade.estado}</EstadoCell>
     </DataRow>
   );
 }

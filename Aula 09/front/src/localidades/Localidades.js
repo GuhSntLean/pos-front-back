@@ -39,7 +39,7 @@ function Localidades(props) {
 function Data(props) {
   const { dados } = props;
 
-  console.log(dados[0].descricao);
+  console.log(dados);
   if (dados.length === 0) {
     return <Message>Nenhuma localidade carregada</Message>;
   } else {
